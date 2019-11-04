@@ -1,8 +1,8 @@
 # README
 
-It includes the barebones + a little bit more to get you up and running. 
+This repo includes a barebones rails 6.0.0 application plus a little bit more to get you up and running. 
 
-This was made for: 
+This repo is meant for use with: 
   - Ruby: ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-darwin18]
   - Rails: 6.0.0
   - Webpacker: 4.0.7
@@ -14,7 +14,7 @@ This was made for:
 
 ## Getting Started
 
-I wanted this to be as smooth as possible, so start here!
+I want this to be as smooth as possible, so start here!
 
 ### Rename the Project
 
@@ -38,7 +38,7 @@ $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 
 ### Environment 
 
-Both the application and the docker-compose file use `.env`; you will need to move this file!
+Both the application and the docker-compose file use `.env` file; you will need to move this file!
 
 ```
 # Copy `.env.development` to `.env`
@@ -68,11 +68,15 @@ docker-compose up
 
 ```
 irb
+```
+
+```ruby
 import 'securerandom'
 SecureRandom.hex(64)
 EDITOR=vim rails credentials:edit --environment production
 ```
 
+After completing the new application setup and everything is looking up to par, please make sure to change up the Readme for your new application!
 
 ## Running into a problem?
 
@@ -80,8 +84,13 @@ EDITOR=vim rails credentials:edit --environment production
 
 Try renaming the `volume` at the bottom to something else.
 
-The application is configured to run mysql as the *all environment* database. 
+The application is configured to run mysql as the *every environment* database. 
 This decision was made to keep development and production environments as similiar as possible.
+
+### Asset Compiling or Docker Build Issues
+
+The `Dockerfile` pulls directly from the Alpine edge repositories which means there is possibility for error and breakage. I usually integrate CICD with gitlab, and build repos often. I plan to keep this template up to date as such breakage occurs.
+
 
 
 ## Need More Customization?
