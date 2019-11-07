@@ -111,9 +111,10 @@ The `Dockerfile` pulls directly from the Alpine edge repositories which means th
   - [Devise - Github](https://github.com/plataformatec/devise)
   - [Rails Naming Conventions - Github, Gist](https://gist.github.com/iangreenleaf/b206d09c587e8fc6399e)
   - [Mailgun Ruby - Github](https://github.com/mailgun/mailgun-ruby)
+  - [Docs Folder on this Repo](./docs/)
 
 
 ## More info
 
-Don't hesitate to reach out: Jack Moore, [jmoore6786wjm@hotmail.com](mailto:jmoore6786wjm@hotmail.com)
+Don't hesitate to reach out: Jack Moore, [moorew1997@gmail.com](mailto:moorew1997@gmail.com)
 
