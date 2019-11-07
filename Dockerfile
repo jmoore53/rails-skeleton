@@ -23,6 +23,7 @@ RUN apk add --no-cache \
   mysql-dev \
   mysql-client \
   tzdata \
+  python \
   libssl1.1 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
   libuv --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
   musl --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
@@ -59,18 +60,18 @@ RUN rm -rf public/packs node_modules/
 COPY . /app/
 
 # Compile production assets with sample key
-# RUN mv config/credentials/production.yml.enc config/credentials/production.yml.enc.bak; \
-#     mv config/credentials/sample.key config/credentials/production.key; \
-#     mv config/credentials/sample.yml.enc config/credentials/production.yml.enc
+RUN mv config/credentials/production.yml.enc config/credentials/production.yml.enc.bak; \
+    mv config/credentials/sample.key config/credentials/production.key; \
+    mv config/credentials/sample.yml.enc config/credentials/production.yml.enc
 
 # Copy JavaScript dependencies
 COPY ./package.json yarn.lock /app/
-RUN rm /app/app/webpack/packs/setupTests.js
-RUN rm -rf /app/app/webpack/packs/test
+RUN rm /app/app/javascript/packs/setupTests.js
+RUN rm -rf /app/app/javascript/packs/test
 
 # Compile Assets
 RUN yarn install
-# RUN RAILS_ENV=production rails webpacker:install
+RUN RAILS_ENV=production rails webpacker:install
 RUN RAILS_ENV=production bundle exec rails assets:precompile
 
 
@@ -91,4 +92,6 @@ WORKDIR /app
 EXPOSE 3000
 
 # Start the Server
-CMD puma -C config/puma.rb -e production
+# CMD puma -C config/puma.rb -e production
+CMD ["/bin/sh", "/app/entrypoint.sh"]
+
