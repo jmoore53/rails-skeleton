@@ -21,11 +21,12 @@ I want this to be as smooth as possible, so start here!
 ```
 bundle install
 yarn install
+bundle install --binstubs
 rails g rename:into New-Name
 ```
 
 
-### Set the upstream
+### Set the upstream & Removing the Commits from this Repo
 
 Set this. Do not hack on this and then push to master like some idiot.
 
@@ -35,6 +36,17 @@ git remote -v
 
 # Change the remote
 $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+```
+
+Do not forget to do this!
+
+```
+git checkout --orphan temp_branch
+git add .
+git commit -m "Boilerplate"
+git branch -D master
+git branch -m master
+git push -f origin master
 ```
 
 ### Environment 
