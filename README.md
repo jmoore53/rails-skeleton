@@ -20,6 +20,7 @@ I want this to be as smooth as possible, so start here!
 
 ```
 bundle install
+yarn install
 rails g rename:into New-Name
 ```
 
