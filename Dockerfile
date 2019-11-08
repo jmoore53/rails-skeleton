@@ -71,7 +71,6 @@ RUN rm -rf /app/app/javascript/packs/test
 
 # Compile Assets
 RUN yarn install
-RUN RAILS_ENV=production rails webpacker:install
 RUN RAILS_ENV=production bundle exec rails assets:precompile
 
 
