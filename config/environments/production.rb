@@ -63,13 +63,13 @@ Rails.application.configure do
 
   # Configure mail for Mailgun
   #
-  config.action_mailer.default_url_options = { :host => ENV['EMAIL_HOST'] }
+  config.action_mailer.default_url_options = { :host => Rails.application.credentials.email[:host] }
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-    api_key: ENV['MG_API_KEY'],
-    domain: ENV['MG_DOMAIN'],
+    api_key: Rails.application.credentials.email[:api_key],
+    domain: Rails.application.credentials.email[:domain],
   }
-
+  
   config.action_mailer.perform_caching = false
 
 

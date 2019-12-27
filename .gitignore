@@ -16,6 +16,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+!/tmp/pids
+bin/
+!/bin/docker-scripts/
 
 # Ignore uploaded files in development.
 /storage/*

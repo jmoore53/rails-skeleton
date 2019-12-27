@@ -66,11 +66,12 @@ RUN mv config/credentials/production.yml.enc config/credentials/production.yml.e
 
 # Copy JavaScript dependencies
 COPY ./package.json yarn.lock /app/
-RUN rm /app/app/javascript/packs/setupTests.js
-RUN rm -rf /app/app/javascript/packs/test
+RUN rm /app/app/webpack/packs/setupTests.js
+RUN rm -rf /app/app/webpack/packs/test
 
 # Compile Assets
 RUN yarn install
+RUN RAILS_ENV=production rails webpacker:install
 RUN RAILS_ENV=production bundle exec rails assets:precompile
 
 
