@@ -18,7 +18,7 @@ export default class Hello extends Component {
   render(){
     return(
       <React.Fragment>
-        <div>
+        <div className="container-fluid jumbotron display-3">
           Hello {this.state.name}
         </div>
       </React.Fragment>
