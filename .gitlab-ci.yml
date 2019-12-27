@@ -53,7 +53,6 @@ Push latest:
 # GitLab will start a new pipeline everytime a Git tag is created, which is pretty awesome
 Push tag:
   variables:
-    # Again, we do not need the source code here. Just playing with Docker.
     GIT_STRATEGY: none
   stage: push
   only:
