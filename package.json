@@ -10,7 +10,7 @@
     "autoprefixer": "^9.7.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "4.3.1",
-    "chart.js": "^2.9.2",
+    "chart.js": "^2.9.4",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "jquery": "^3.4.1",
